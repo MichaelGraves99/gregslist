@@ -1,0 +1,22 @@
+.fa {
+  font-family: 'Indie Flower', cursive;
+}
+.fb {
+  font-family: 'Concert One', cursive;
+}
+
+h1{
+  font-size: 4rem;
+}
+h2{
+  font-size: 2rem;
+}
+
+.cen{
+  display: flex;
+  justify-content: center;
+}
+.cen1{
+  display: flex;
+  justify-content: space-evenly;
+}
