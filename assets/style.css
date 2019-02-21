@@ -1,3 +1,13 @@
+.fa{
+  font-family: 'Abril Fatface', cursive;
+}
+.fb{
+font-family: 'Righteous', cursive;
+}
+.header1{
+  font-size: 5rem
+}
+
 .cen {
   display: flex;
   justify-content: center;

@@ -16,7 +16,7 @@ function draw() {
         <input type="number" name="rate" placeholder="Pay Rate" required>
         <input type="number" name="hours" placeholder="Hours" required>
         <input type="text" name="description" placeholder="Description">
-        <button type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
     </form>
     `
 }
