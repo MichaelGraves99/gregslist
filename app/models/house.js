@@ -1,26 +1,25 @@
-let id = 1
-
 export default class House {
-  constructor(data) {
-    this.id = id
-    this.price = data.price
-    this.title = data.title
-    this.img = data.img
-    this.location = data.location
-    this.description = data.description || 'No Description Provided'
-    id++
-  }
-
-  getTemplate() {
-    return `
-        <div class="card col-3">
-            <img class="card-img-top" src="${this.img}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">${this.title}</h5>
-                <p class="card-text">${this.description} -- ${this.price}</p>
-                <p class="card-text">${this.location}</p>
-                <button onclick="app.controllers.houseController.deleteHouse(${this.id})">Remove</button>
-            </div>
-        </div>`
-  }
+    constructor(data) {
+        this._id = data._id
+        this.bedrooms = data.bedrooms
+        this.bathrooms = data.bathrooms
+        this.imgUrl = data.imgUrl
+        this.levels = data.levels
+        this.year = data.year
+        this.price = parseInt(data.price).toFixed(2)
+        this.description = data.description || 'What you see is what you get'
+    }
+    getTemplate() {
+        return `
+        <div class="card col-lg-3 col-md-6 col-sm-12">
+        <img class="card-img-top" src="${this.imgUrl}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">${this.year} ${this.bedrooms}bed - ${this.bathrooms}bath</h5>
+            <p class="card-text">${this.description} -- $${this.price}</p>
+            <button class="btn btn-primary" onclick="app.controllers.houseController.bid('${this._id}')">BID</button>
+            <button class="btn btn-danger" onclick="app.controllers.houseController.deleteHouse('${this._id}')">Remove</button>
+        </div>
+    </div>
+    `
+    }
 }
