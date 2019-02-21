@@ -11,8 +11,8 @@ function draw() {
   document.getElementById('available-content').innerHTML = template
   document.getElementById('form-content').innerHTML = `
     <form onsubmit="app.controllers.jobController.addJob(event)">
-        <input type="number" name="company" placeholder="Colmpany" required>
-        <input type="number" name="jobTitle" placeholder="Job Title" required>
+        <input type="text" name="company" placeholder="Company" required>
+        <input type="text" name="jobTitle" placeholder="Job Title" required>
         <input type="number" name="rate" placeholder="Pay Rate" required>
         <input type="number" name="hours" placeholder="Hours" required>
         <input type="text" name="description" placeholder="Description">
@@ -31,12 +31,12 @@ export default class JobController {
   addJob(event) {
     event.preventDefault();
     let form = event.target
-    let newHouse = {
+    let newJob = {
       company: form.company.value,
-      JobTitle: form.JobTitle.value,
+      jobTitle: form.jobTitle.value,
       rate: form.rate.value,
       hours: form.hours.value,
-      description: form.description.value,
+      description: form.description.value
     }
     _js.addJob(newJob)
     //Clears the form

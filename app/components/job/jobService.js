@@ -40,6 +40,15 @@ export default class JobService {
         setState('jobs', data)
       })
   }
+
+  addJob(rawJob) {
+    let newJob = new Job(rawJob)
+    _api.post('jobs', newJob)
+      .then(res => {
+        this.getApiJobs()
+      })
+  }
+
   deleteJob(id) {
     _api.delete('Jobs/' + id)
       .then(res => {

@@ -2,3 +2,8 @@
   display: flex;
   justify-content: center;
   }
+
+#header{
+  background: url("bricks.jpg") 
+  /* background: url("header.jpeg") center center / cover no-repeat */
+}
